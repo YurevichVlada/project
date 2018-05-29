@@ -42,14 +42,9 @@ void InfoMemory:: getStatus(){
         memoryLoad = to_string(static_cast<unsigned long long>(ms.dwMemoryLoad))+"%";
         totalPhys =  to_string(static_cast<unsigned long long>(ms.ullTotalPhys/(1024*1024)))+" MB";
         availPhys =  to_string(static_cast<unsigned long long>(ms.ullAvailPhys/(1024*1024)))+" MB";
-        totalVirt = to_string(static_cast<unsigned long long>(ms.ullTotalVirtual/(1024*1024)))+" MB";
-        availVirt = to_string(static_cast<unsigned long long>(ms.ullAvailVirtual/(1024*1024)))+" MB";
-        totalPagefile = to_string(static_cast<unsigned long long>(ms.ullAvailPageFile/(1024*1024)))+" MB";
-      /*    cout<<ms.dwMemoryLoad<<"%"<<endl;
-         cout<<ms.ullTotalPhys/(1024*1024)<<endl;
-         cout<<ms.ullAvailPhys/(1024*1024)<<endl;
-         cout<<ms.ullTotalVirtual/(1024*1024)<<endl;
-         cout<<ms.ullAvailVirtual/(1024*1024)<<endl;
-         */
+        totalVirt = to_string(static_cast<unsigned long long>(ms.ullTotalPageFile/(1024*1024)))+" MB";
+        availVirt = to_string(static_cast<unsigned long long>(ms.ullAvailPageFile/(1024*1024)))+" MB";
+        totalPagefile = to_string(static_cast<unsigned long long>(ms.ullAvailExtendedVirtual/(1024*1024)))+" MB";
+
 
 }
